@@ -1,12 +1,91 @@
 @import nib
+
+// Global Layout
 global-reset()
+
+*
+  box-sizing border-box
+
+section, header
+  padding: 1rem
+
+// Global Typography
+*
+  font-family "omnes-pro", sans-serif
+
+html
+  font-size 16px
+  text-align center
+
+h1, h2, h3, h4
+  font-family "freight-big-pro", serif
+  font-weight bold
+
+h1
+  font-size 2.5rem
+  line-height 2.5rem
+
+h2
+  font-size 1.8rem
+  font-weight 500
+  line-height 2.2rem
+  margin-bottom 0.5rem
+
+h3
+  font-size: 1.2rem
+
+p
+  font-size 1rem
+  line-height: 1.4rem
+
+a
+  text-decoration none
+  border-bottom: 1px solid #3a84bf
+  color #3a84bf
+  &:hover
+    color lighten(#3a84bf, 30%)
+    border-color lighten(#3a84bf, 30%)
+
+
 // Homepage
-// Header
+//// Header
 
 header
   width 100%
+  padding-top 0
+
+  h1
+    margin-top 0.5rem
 
   img
     display block
-    max-width 70%
+    width 70%
+    max-width 15rem
     margin 0 auto
+
+
+//// Sections
+section
+  h2
+    margin-top 2em
+
+.oldButton
+  position relative
+  background linear-gradient(top, #365baa, #81c8ea) 
+  padding 0 0.4rem 0.2rem
+  border-radius 100px
+  box-shadow #aaa 0 0.3rem 1rem
+  border 1px solid #3b62ae
+  display inline-block  
+  
+  &:after
+    position absolute
+    display block
+    top 0
+    left 5%
+    content ''
+    border-radius 100px
+    width 90%
+    padding 0.5rem 0
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 95%, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0)));
+
