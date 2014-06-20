@@ -67,8 +67,9 @@ header
 //// Sections
 section
   h2
-    margin-top 2em
+    margin-top 2.5rem
 
+////// Way too much work on this stupid button
 .oldButton
   position relative
   background linear-gradient(top, #365baa, #81c8ea) 
@@ -76,8 +77,9 @@ section
   border-radius 100px
   box-shadow #aaa 0 0.3rem 1rem
   border 1px solid #3b62ae
-  display inline-block  
-  
+  display inline-block 
+  &:hover
+    background linear-gradient(top, lighten(#365baa, 10%), lighten(#81c8ea, 10%)) 
   &:after
     position absolute
     display block
@@ -87,5 +89,26 @@ section
     border-radius 100px
     width 90%
     padding 0.5rem 0
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 95%, from(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0)));
+    background linear-gradient(top, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0))
+  &:active
+    box-shadow #aaa 0 0.1rem 1rem
+    top 0.1em
+    &:after
+      padding 0.1rem 0
+      width 88%
+      left 6%
+      top 0
+      border-radius 10px 10px 0 0 / 5px 5px 0 0
+      opacity 0.7
+    &:before
+      display block
+      content ''
+      position absolute
+      background darken(#254ca2,50%)
+      margin-top 0.5rem
+      width 80%
+      left 10%
+      padding 0.3rem 0
+      box-shadow 0px 0px 15px black, 0 0 30px white
+      opacity 0.2
 
