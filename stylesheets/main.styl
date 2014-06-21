@@ -7,7 +7,10 @@ global-reset()
   box-sizing border-box
 
 section, header, footer
-  padding: 1rem 2rem
+  padding 1rem 2rem
+  max-width 63rem
+  margin-left auto
+  margin-right auto
 
 // Global Typography
 
@@ -46,6 +49,9 @@ a
   &:hover
     color #f19929
 
+.tablet, .full
+  display none
+
 
 // Homepage
 //// Header
@@ -53,6 +59,7 @@ a
 header
   width 100%
   padding-top 0
+  text-align center
 
   h1
     margin-top 1rem
@@ -72,8 +79,11 @@ header
 section
   &:before
     content 'i'
+    text-align center
     border 1px solid #999
     color #999
+    background white
+    outline: 1rem solid white
     margin 2rem auto -2rem
     width 2rem
     height 2rem
@@ -99,15 +109,18 @@ section
     
         
     .org
-      background-size: 100%
+      background-size: 100% 100%
+      max-width 40em
+      margin 0 auto
       padding 1rem
+      text-align center
       position relative
       .orgInfo
         padding 2rem
         border 2px solid white
         .logo
           -webkit-filter drop-shadow( 0 0 30px rgba(0,0,0,0.3) )
-          max-width 12rem
+          max-width 8rem
 
         .description
           color white
@@ -252,6 +265,7 @@ section.contact:before
 
 li.project, li.post
   width 100%
+  text-align center
   padding 1rem
   margin 1rem auto
   background-image url('../images/link2.jpg')
@@ -310,3 +324,126 @@ footer
     margin-bottom 0.5rem
     font-weight normal
 
+
+@media all and (min-width: 45rem)
+  .mobile
+    display none
+  .tablet
+    display inline
+
+  ul.work
+    clearfix()
+    li.project
+      width 48%
+      float left
+      margin-right 4%
+      &:nth-child(2n)
+        margin-right 0
+      a
+        padding-top 1.4rem
+        height 8rem
+
+
+@media all and (min-width: 65rem)
+  .tablet
+    display none
+  .full
+    display inline
+
+  html
+    text-align left
+
+  section
+    padding-top 4rem
+    &:before
+      position absolute
+      margin-left -3.5rem
+      margin-top 2.5rem
+
+  header p
+    margin-top 0.5rem
+
+  ul.writing, ul.currentStuff
+    clearfix()
+
+  .writing > p
+    text-align right
+
+  li.post, .currentStuff li
+    .mobile
+      display inline
+
+  ul.work li.project, ul.writing li.post, ul.currentStuff li
+    float left
+    width 31% !important
+    margin-right 3.5%
+    &:nth-child(2n)
+      margin-right 3.5%
+    &:nth-child(3n)
+      margin-right 0
+
+  ul.work li.project a, ul.writing li.post a
+    padding-top 1.3rem
+    height 8rem
+
+  .orgInfo
+    height 17rem
+  
+  .currentStuff
+    li
+      margin-top 0.5rem
+
+      &.designHack .orgInfo .logo
+        margin .9rem auto .475rem
+
+      &.amicus .orgInfo .logo
+        margin 2.95rem auto 2.95rem
+
+
+@media all and (min-width: 80rem)
+
+  section, header, footer
+    max-width 73rem
+    padding-left 10rem
+    position relative
+
+
+  header
+    text-align left
+
+    img
+      position absolute
+      margin-left -16rem
+      margin-top -1rem
+    h1
+      padding-top 2.5rem
+      font-size 2.8rem
+    p
+      padding-left 1rem
+
+  section:after
+    border-left: 1px dashed #999
+    z-index -1
+    content ''
+    height 100%
+    display block
+    position absolute
+    top 0
+    left 7.5rem
+
+  header:after
+    border-right: 1px dashed #999
+    border-top: 1px dashed #999
+    z-index -1
+    content ''
+    height 3rem
+    width 3rem
+    display block
+    position absolute
+    bottom 0
+    left 4.5rem
+    border-radius 0 2rem 0 0
+
+
+
+  

@@ -3,8 +3,10 @@ $(function() {
   var delight = $('h2.delight'),
       delightCount = 0
 
-  delight.hover(function() {
+  delight.hover(delightBounce)
+  delight.click(delightBounce)
 
+  function delightBounce() {
     if (!delight.hasClass('animating')) {
       delight.addClass('animating')
       setTimeout(function() {
@@ -16,8 +18,8 @@ $(function() {
     if (delightCount > 4) {
       setTimeout(function() {
         $('section.delight p').addClass('shown')
-      }, 600)  
+      }, 500)  
     }
-  })
+  }
 
 })
