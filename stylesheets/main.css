@@ -96,10 +96,10 @@ a img {
 }
 section,
 header {
-  padding: 1rem;
+  padding: 1rem 2rem;
 }
 * {
-  font-family: "omnes-pro", sans-serif;
+  font-family: "freight-sans-pro", sans-serif;
 }
 html {
   font-size: 16px;
@@ -130,20 +130,23 @@ p {
   line-height: 1.4rem;
 }
 a {
-  text-decoration: none;
-  border-bottom: 1px solid #3a84bf;
-  color: #3a84bf;
+  color: #375ca9;
 }
 a:hover {
-  color: #73a9d4;
-  border-color: #73a9d4;
+  color: #6889ce;
+  border-color: #6889ce;
 }
 header {
   width: 100%;
   padding-top: 0;
 }
 header h1 {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
+}
+header p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
 }
 header img {
   display: block;
@@ -151,8 +154,90 @@ header img {
   max-width: 15rem;
   margin: 0 auto;
 }
+section:before {
+  content: 'i';
+  border: 1px solid #999;
+  color: #999;
+  margin: 2rem auto -2rem;
+  width: 2rem;
+  height: 2rem;
+  display: block;
+  -webkit-border-radius: 2rem;
+  border-radius: 2rem;
+  font-family: "freight-big-pro", serif;
+  font-style: italic;
+  font-size: 1.8rem;
+}
 section h2 {
   margin-top: 2.5rem;
+}
+.currentStuff li {
+  width: 90%;
+  margin: 1.5rem auto 2rem;
+}
+.currentStuff li .role {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+.currentStuff li .role em {
+  font-weight: bold;
+}
+.currentStuff li .org {
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;
+  padding: 1rem;
+  position: relative;
+}
+.currentStuff li .org .orgInfo {
+  padding: 2rem;
+  border: 2px solid #fff;
+}
+.currentStuff li .org .orgInfo .logo {
+  -webkit-filter: drop-shadow(0 0 30px rgba(0,0,0,0.3));
+  max-width: 80%;
+}
+.currentStuff li .org .orgInfo .description {
+  color: #fff;
+  line-height: 1.4rem;
+  margin-top: 1rem;
+  text-shadow: 0 0 30px rgba(0,0,0,0.6);
+}
+.currentStuff li.designCode .role {
+  color: #f14c19;
+}
+.currentStuff li.designCode .org {
+  background-image: url("../images/nowbg1.jpg");
+}
+.currentStuff li.designCode .org .logo {
+  width: 50%;
+  margin-bottom: 0.5rem;
+}
+.currentStuff li.designHack .role {
+  color: #e27211;
+}
+.currentStuff li.designHack .org {
+  background-image: url("../images/nowbg2dark.jpg");
+}
+.currentStuff li.designHack .org .orgInfo {
+  padding-top: 1.2rem;
+}
+.currentStuff li.designHack .org .logo {
+  width: 60%;
+}
+.currentStuff li.amicus .role {
+  color: #528a2e;
+}
+.currentStuff li.amicus .org {
+  background-image: url("../images/nowbg3dark.jpg");
+}
+.currentStuff li.amicus .org .orgInfo {
+  padding-top: 1.5rem;
+}
+.currentStuff li.amicus .org .logo {
+  width: 80%;
+  margin-bottom: 0.5rem;
 }
 .oldButton {
   position: relative;
@@ -186,11 +271,11 @@ section h2 {
   border-radius: 100px;
   width: 90%;
   padding: 0.5rem 0;
-  background: -webkit-linear-gradient(top, rgba(255,255,255,0.7), rgba(255,255,255,0));
-  background: -moz-linear-gradient(top, rgba(255,255,255,0.7), rgba(255,255,255,0));
-  background: -o-linear-gradient(top, rgba(255,255,255,0.7), rgba(255,255,255,0));
-  background: -ms-linear-gradient(top, rgba(255,255,255,0.7), rgba(255,255,255,0));
-  background: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0));
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0.5), rgba(255,255,255,0));
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.5), rgba(255,255,255,0));
+  background: -o-linear-gradient(top, rgba(255,255,255,0.5), rgba(255,255,255,0));
+  background: -ms-linear-gradient(top, rgba(255,255,255,0.5), rgba(255,255,255,0));
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0));
 }
 .oldButton:active {
   -webkit-box-shadow: #aaa 0 0.1rem 1rem;
@@ -222,6 +307,9 @@ section h2 {
   opacity: 0.2;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
   filter: alpha(opacity=20);
+}
+h2.delight {
+  margin-top: 0.7rem;
 }
 h2.delight span.animate {
   font-weight: bold;
