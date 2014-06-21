@@ -452,7 +452,6 @@ li.post a {
 }
 li.project a:after,
 li.post a:after {
-  content: '\25b6';
   display: block;
   top: 50%;
   right: -0.8rem;
@@ -486,16 +485,13 @@ li.post a h3 {
   font-family: "freight-sans-pro", sans-serif;
   font-weight: 600;
 }
-li.project a:visited,
-li.post a:visited,
 li.project a.seen,
 li.post a.seen {
+  color: #f00;
   opacity: 0.3;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
   filter: alpha(opacity=30);
 }
-li.project a:visited:before,
-li.post a:visited:before,
 li.project a.seen:before,
 li.post a.seen:before {
   content: '\2713  Seen';
@@ -504,8 +500,6 @@ li.post a.seen:before {
   top: 0.5rem;
   left: 0.5rem;
 }
-li.project a:visited:hover,
-li.post a:visited:hover,
 li.project a.seen:hover,
 li.post a.seen:hover {
   opacity: 1;
@@ -521,11 +515,66 @@ li.post.post h3 {
   font-weight: 400;
 }
 footer {
-  margin-top: 4rem;
+  padding-top: 4rem;
 }
 footer h3 {
   margin-bottom: 0.5rem;
   font-weight: normal;
+}
+.project.amicus,
+.project.crypt,
+.project.trove {
+  background-image: url("../images/work/amicus/header.jpg");
+  -webkit-background-size: auto 100%;
+  -moz-background-size: auto 100%;
+  background-size: auto 100%;
+  background-position: 50% 50%;
+  position: relative;
+}
+.project.amicus:after,
+.project.crypt:after,
+.project.trove:after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+.project.amicus a,
+.project.crypt a,
+.project.trove a {
+  z-index: 10;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.project.amicus a:hover,
+.project.crypt a:hover,
+.project.trove a:hover {
+  background: rgba(0,0,0,0.5);
+  border: 2px solid #fff;
+}
+.project.crypt {
+  background-image: url("../images/work/crypt/header.jpg");
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  background-size: 100% auto;
+}
+.project.crypt:after {
+  background: rgba(0,0,0,0.2);
+}
+.project.trove {
+  background-image: url("../images/work/trove/header.jpg");
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  background-size: 100% auto;
+}
+.project.trove:after {
+  background: rgba(0,0,0,0.6);
 }
 @media all and (min-width: 45rem) {
   .mobile {
@@ -659,7 +708,8 @@ footer h3 {
   header p {
     padding-left: 1rem;
   }
-  section:after {
+  section:after,
+  footer:after {
     border-left: 1px dashed #999;
     z-index: -1;
     content: '';

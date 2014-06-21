@@ -278,7 +278,7 @@ li.project, li.post
     position relative
     transition all 0.2s ease-in-out
     &:after
-        content '\25b6'
+        //content '\25b6'
         display block
         top 50%
         right -0.8rem
@@ -301,7 +301,8 @@ li.project, li.post
       font-weight 600
 
     // Check if this can even work anymore
-    &:visited, &.seen
+    &.seen
+      color red
       opacity 0.3
       &:before
         content '\2713  Seen'
@@ -319,10 +320,47 @@ li.project, li.post
 
 
 footer
-  margin-top 4rem
+  padding-top 4rem
   h3
     margin-bottom 0.5rem
     font-weight normal
+
+
+.project.amicus, .project.crypt, .project.trove
+  background-image url('../images/work/amicus/header.jpg')
+  background-size auto 100%
+  background-position: 50% 50%
+  position relative
+  &:after
+    display block
+    content ''
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background rgba(0,0,0,0.4)
+    z-index 1
+  a
+    z-index 10
+    background: transparent
+    color: white
+    border: 2px solid white
+    &:hover
+      background: rgba(0,0,0,0.5)
+      border 2px solid white
+
+.project.crypt
+  background-image url('../images/work/crypt/header.jpg')
+  background-size 100% auto
+  &:after
+    background rgba(0,0,0,0.2)
+
+.project.trove
+  background-image url('../images/work/trove/header.jpg')
+  background-size 100% auto
+  &:after
+    background rgba(0,0,0,0.6)
 
 
 @media all and (min-width: 45rem)
@@ -421,7 +459,7 @@ footer
     p
       padding-left 1rem
 
-  section:after
+  section:after, footer:after
     border-left: 1px dashed #999
     z-index -1
     content ''

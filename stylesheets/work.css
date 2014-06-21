@@ -1,0 +1,40 @@
+a[target="_blank"]:before {
+  content: '(external) ';
+}
+header {
+  margin-bottom: 5rem;
+}
+header nav {
+  position: relative;
+  width: 30rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: 1rem;
+}
+header nav a {
+  position: absolute;
+  display: block;
+  top: 40%;
+  text-align: center;
+  font-size: 1.4rem;
+}
+header nav a.home {
+  left: 10%;
+}
+header nav a.blog {
+  right: 10%;
+}
+header h1 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+header h3 {
+  font-family: "freight-sans-pro", sans-serif;
+  font-weight: 400;
+}
+section {
+  text-align: left;
+}
+section:before {
+  display: none;
+}
