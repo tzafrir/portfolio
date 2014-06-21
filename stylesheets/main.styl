@@ -112,3 +112,23 @@ section
       box-shadow 0px 0px 15px black, 0 0 30px white
       opacity 0.2
 
+////// Delight
+h2.delight
+  span.animate
+    font-weight bold
+    position relative
+    height 3em
+    display inline-block
+    vertical-align bottom
+    span
+      display inline-block
+      position relative
+      margin-top 1.8em
+      transition margin-top 0.1s linear
+
+  &:hover
+    span.animate span
+      margin-top 0
+      transition margin-top 0.3s ease-in-out
+
+

@@ -223,3 +223,28 @@ section h2 {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
   filter: alpha(opacity=20);
 }
+h2.delight span.animate {
+  font-weight: bold;
+  position: relative;
+  height: 3em;
+  display: inline-block;
+  vertical-align: bottom;
+}
+h2.delight span.animate span {
+  display: inline-block;
+  position: relative;
+  margin-top: 1.8em;
+  -webkit-transition: margin-top 0.1s linear;
+  -moz-transition: margin-top 0.1s linear;
+  -o-transition: margin-top 0.1s linear;
+  -ms-transition: margin-top 0.1s linear;
+  transition: margin-top 0.1s linear;
+}
+h2.delight:hover span.animate span {
+  margin-top: 0;
+  -webkit-transition: margin-top 0.3s ease-in-out;
+  -moz-transition: margin-top 0.3s ease-in-out;
+  -o-transition: margin-top 0.3s ease-in-out;
+  -ms-transition: margin-top 0.3s ease-in-out;
+  transition: margin-top 0.3s ease-in-out;
+}
