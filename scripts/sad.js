@@ -13,8 +13,10 @@ $(function() {
       delightCount++;
     }
 
-    if (delightCount > 5) {
-      $('section.delight p').fadeIn()
+    if (delightCount > 4) {
+      setTimeout(function() {
+        $('section.delight p').addClass('shown')
+      }, 600)  
     }
   })
 
