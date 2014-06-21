@@ -106,7 +106,7 @@ section
         border 2px solid white
         .logo
           -webkit-filter drop-shadow( 0 0 30px rgba(0,0,0,0.3) )
-          max-width 80%
+          max-width 12rem
 
         .description
           color white
@@ -126,7 +126,7 @@ section
       .role
         color darken(#ee8020,10%)
       .org
-        background-image url('../images/nowbg2dark.jpg')
+        background-image url('../images/nowbg2.jpg')
         .orgInfo
           padding-top 1.2rem
         .logo
@@ -135,7 +135,7 @@ section
       .role
         color darken(#5b9933,10%)
       .org
-        background-image url('../images/nowbg3dark.jpg')
+        background-image url('../images/nowbg3.jpg')
         .orgInfo
           padding-top 1.5rem
         .logo
@@ -187,23 +187,35 @@ section
       opacity 0.2
 
 ////// Delight
+
+$offset = -2rem
+$duration = 0.4s
+
+@keyframes bounce
+  0%
+    transform translateY(0)
+  50%
+    transform translateY($offset)
+  100%
+    transform translateY(0)
+
 h2.delight
-  margin-top 0.7rem
   span.animate
     font-weight bold
-    position relative
-    height 3em
-    display inline-block
-    vertical-align bottom
     span
       display inline-block
       position relative
-      margin-top 1.8em
-      transition margin-top 0.1s linear
 
   &:hover
     span.animate span
-      margin-top 0
-      transition margin-top 0.3s ease-in-out
+      animation-duration $duration
+      animation-name bounce
+
+  for letter in (1..7)
+    span.animate span:nth-child({letter})
+      animation-delay 0.05s * letter
+
+
+
 
 
