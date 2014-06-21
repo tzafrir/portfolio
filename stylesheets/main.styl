@@ -190,14 +190,15 @@ section
 
 $offset = -2rem
 $duration = 0.4s
+$letters = (1..7)
 
 @keyframes bounce
   0%
     transform translateY(0)
   50%
     transform translateY($offset)
-  100%
-    transform translateY(0)
+  90%
+    transform translateY($offset * -0.2)
 
 h2.delight
   span.animate
@@ -211,7 +212,7 @@ h2.delight
       animation-duration $duration
       animation-name bounce
 
-  for letter in (1..7)
+  for letter in $letters
     span.animate span:nth-child({letter})
       animation-delay 0.05s * letter
 
