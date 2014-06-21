@@ -301,6 +301,21 @@ section h2 {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
   filter: alpha(opacity=20);
 }
+h2.delight {
+  -webkit-transition: 0.7s color;
+  -moz-transition: 0.7s color;
+  -o-transition: 0.7s color;
+  -ms-transition: 0.7s color;
+  transition: 0.7s color;
+}
+h2.delight:hover {
+  color: #f0582d;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
+}
 h2.delight span.animate {
   font-weight: bold;
 }
