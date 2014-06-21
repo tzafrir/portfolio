@@ -209,7 +209,7 @@ h2.delight
       display inline-block
       position relative
 
-  &:hover
+  &.animating
     span.animate span
       animation-duration $duration
       animation-name bounce
@@ -218,7 +218,9 @@ h2.delight
     span.animate span:nth-child({letter})
       animation-delay 0.04s * letter
 
-
+.delight p {
+  display: none;
+}
 ////// Work
 
 // TODO replace with icons
@@ -281,7 +283,7 @@ li.project, li.post
         left 0.5rem
       &:hover
         opacity 1
-        
+
 li.project
   background-image url('../images/link2.jpg')
 

@@ -308,7 +308,7 @@ h2.delight span.animate span {
   display: inline-block;
   position: relative;
 }
-h2.delight:hover span.animate span {
+h2.delight.animating span.animate span {
   -webkit-animation-duration: 0.6s;
   -moz-animation-duration: 0.6s;
   -o-animation-duration: 0.6s;
@@ -368,6 +368,9 @@ h2.delight span.animate span:nth-child(7) {
   -o-animation-delay: 0.28s;
   -ms-animation-delay: 0.28s;
   animation-delay: 0.28s;
+}
+.delight p {
+  display: none;
 }
 section.writing:before {
   content: 'w';
