@@ -383,7 +383,7 @@ li.post {
   width: 100%;
   padding: 1rem;
   margin: 1rem auto;
-  background-image: url("../images/workbg.jpg");
+  background-image: url("../images/link1.jpg");
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
   background-size: 100%;
@@ -461,6 +461,9 @@ li.post a.seen:hover {
   opacity: 1;
   -ms-filter: none;
   filter: none;
+}
+li.project {
+  background-image: url("../images/link2.jpg");
 }
 footer {
   margin-top: 4rem;
