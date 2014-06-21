@@ -33,17 +33,17 @@ h2
   margin-bottom 0.5rem
 
 h3
-  font-size: 1.2rem
+  font-size: 1.4rem
 
 p
   font-size 1rem
   line-height: 1.4rem
 
 a
-  color #375ca9
+  color #ed5029
+  text-decoration none
   &:hover
-    color lighten(#375ca9, 30%)
-    border-color lighten(#375ca9, 30%)
+    color #f19929
 
 
 // Homepage
@@ -116,7 +116,7 @@ section
 
     &.designCode
       .role
-        color darken(#f36235,10%)
+        //color darken(#f36235,10%)
       .org
         background-image url('../images/nowbg1.jpg')
         .logo
@@ -124,7 +124,7 @@ section
           margin-bottom .5rem
     &.designHack
       .role
-        color darken(#ee8020,10%)
+        //color darken(#ee8020,10%)
       .org
         background-image url('../images/nowbg2.jpg')
         .orgInfo
@@ -133,7 +133,7 @@ section
           width 60%
     &.amicus
       .role
-        color darken(#5b9933,10%)
+        //color darken(#5b9933,10%)
       .org
         background-image url('../images/nowbg3.jpg')
         .orgInfo
@@ -218,6 +218,36 @@ h2.delight
       animation-delay 0.04s * letter
 
 
+////// Work
 
+ul.work
+  li.project
+    width 100%
+    background #faef6a
+    padding 1rem
+    margin 1rem auto
+    a
+      border 2px solid black
+      padding 1rem
+      display block
+      color black
+      position relative
+      h3
+        margin-bottom 0.5rem
+        font-family "freight-sans-pro", sans-serif
+
+      // Check if this can even work anymore
+      &:visited, &.seen
+        opacity 0.3
+        &:before
+          content '\2713  Seen'
+          display block
+          position absolute
+          top 0.5rem
+          left 0.5rem
+        &:hover
+          opacity 1
+          &:before
+            display none
 
 
