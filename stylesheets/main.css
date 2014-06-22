@@ -145,6 +145,9 @@ a:hover {
 .full {
   display: none;
 }
+.mobile {
+  display: inline;
+}
 header {
   width: 100%;
   padding-top: 0;
@@ -433,9 +436,11 @@ li.post {
   padding: 1rem;
   margin: 1rem auto;
   background-image: url("../images/link2.jpg");
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  background-size: 100%;
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  background-size: 100% auto;
+  background-position: 50% 50%;
+  position: relative;
 }
 li.project a,
 li.post a {
@@ -443,41 +448,40 @@ li.post a {
   padding: 1rem;
   display: block;
   color: #000;
+  height: 8rem;
   position: relative;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-}
-li.project a:after,
-li.post a:after {
-  display: block;
-  top: 50%;
-  right: -0.8rem;
-  position: absolute;
-  color: #fff;
-  font-size: 0.6rem;
-  margin-top: -0.3rem;
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
+  z-index: 10;
+  padding-top: 1.4rem;
+  background: transparent;
+  color: #000;
+  border: 2px solid #000;
 }
 li.project a:hover,
 li.post a:hover {
-  background: rgba(255,255,255,0.6);
-  -webkit-transition: all 0.1s linear;
-  -moz-transition: all 0.1s linear;
-  -o-transition: all 0.1s linear;
-  -ms-transition: all 0.1s linear;
-  transition: all 0.1s linear;
-  border-right-width: 1rem;
+  background: rgba(255,255,255,0.4);
+  border: 2px solid #000;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  border-top: 10px solid #000;
+  padding-top: 1.1rem;
 }
 li.project a:hover:after,
 li.post a:hover:after {
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
+  content: '...';
+  font-size: 2rem;
+  color: #fff;
+  top: -1.35rem;
+  left: -0.1rem;
+  width: 1.5rem;
+  position: absolute;
 }
 li.project a h3,
 li.post a h3 {
@@ -485,23 +489,37 @@ li.post a h3 {
   font-family: "freight-sans-pro", sans-serif;
   font-weight: 600;
 }
-li.project a.seen,
-li.post a.seen {
+li.project.current,
+li.post.current {
+  background-image: url("../images/grey.jpg");
+}
+li.project.current a:hover,
+li.post.current a:hover {
+  border: 2px solid #000;
+  background: transparent;
+  padding-top: 1.4rem;
+}
+li.project.current a:hover:after,
+li.post.current a:hover:after {
+  display: none;
+}
+li.project.seen,
+li.post.seen {
   color: #f00;
   opacity: 0.3;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
   filter: alpha(opacity=30);
 }
-li.project a.seen:before,
-li.post a.seen:before {
+li.project.seen:before,
+li.post.seen:before {
   content: '\2713  Seen';
   display: block;
   position: absolute;
   top: 0.5rem;
   left: 0.5rem;
 }
-li.project a.seen:hover,
-li.post a.seen:hover {
+li.project.seen:hover,
+li.post.seen:hover {
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -521,66 +539,11 @@ footer h3 {
   margin-bottom: 0.5rem;
   font-weight: normal;
 }
-.project.amicus,
-.project.crypt,
-.project.trove {
-  background-image: url("../images/work/amicus/header.jpg");
-  -webkit-background-size: auto 100%;
-  -moz-background-size: auto 100%;
-  background-size: auto 100%;
-  background-position: 50% 50%;
-  position: relative;
-}
-.project.amicus:after,
-.project.crypt:after,
-.project.trove:after {
-  display: block;
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4);
-  z-index: 1;
-}
-.project.amicus a,
-.project.crypt a,
-.project.trove a {
-  z-index: 10;
-  background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-}
-.project.amicus a:hover,
-.project.crypt a:hover,
-.project.trove a:hover {
-  background: rgba(0,0,0,0.5);
-  border: 2px solid #fff;
-}
-.project.crypt {
-  background-image: url("../images/work/crypt/header.jpg");
-  -webkit-background-size: 100% auto;
-  -moz-background-size: 100% auto;
-  background-size: 100% auto;
-}
-.project.crypt:after {
-  background: rgba(0,0,0,0.2);
-}
-.project.trove {
-  background-image: url("../images/work/trove/header.jpg");
-  -webkit-background-size: 100% auto;
-  -moz-background-size: 100% auto;
-  background-size: 100% auto;
-}
-.project.trove:after {
-  background: rgba(0,0,0,0.6);
-}
 @media all and (min-width: 45rem) {
   .mobile {
     display: none;
   }
-  br.tablet {
+  .tablet {
     display: inline;
   }
   figure.tablet {
@@ -605,9 +568,8 @@ footer h3 {
   ul.work li.project:nth-child(2n) {
     margin-right: 0;
   }
-  ul.work li.project a {
-    padding-top: 1.4rem;
-    height: 8rem;
+  ul.writing .post a {
+    height: 6.6rem;
   }
 }
 @media all and (min-width: 65rem) {
@@ -768,30 +730,30 @@ footer h3 {
   }
 }
 @media all and (min-width: 80rem) {
-  section,
-  header,
-  footer {
+  .homePage section,
+  .homePage header,
+  .homePage footer {
     max-width: 73rem;
     padding-left: 10rem;
     position: relative;
   }
-  header {
+  .homePage header {
     text-align: left;
   }
-  header img {
+  .homePage header img {
     position: absolute;
     margin-left: -16rem;
     margin-top: -1rem;
   }
-  header h1 {
+  .homePage header h1 {
     padding-top: 2.5rem;
     font-size: 2.8rem;
   }
-  header p {
+  .homePage header p {
     padding-left: 1rem;
   }
-  section:after,
-  footer:after {
+  .homePage section:after,
+  .homePage footer:after {
     border-left: 1px dashed #999;
     z-index: -1;
     content: '';
@@ -801,7 +763,7 @@ footer h3 {
     top: 0;
     left: 7.5rem;
   }
-  header:after {
+  .homePage header:after {
     border-right: 1px dashed #999;
     border-top: 1px dashed #999;
     z-index: -1;
