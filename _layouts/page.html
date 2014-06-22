@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<body>
+  
+</body>
+<header>
+  <nav>
+    <a class="home" href="/">Home</a>
+    <img src="/assets/images/me.png">
+    <a class="blog" href="/">Blog</a>
+  </nav>
+  <h1>{{ page.title }}</h1>
+  <h2>{{ page.description }}</h2>
+</header>
+
+<div class="thisProject">
+  {{ content }}  
+</div>
+
+{% include work.html %}
+
+
+  <footer>
+    <p>
+      <a href="mailto:joel@joelcalifa.com">joel@joelcalifa.com</a> or <a href="http://twitter.com/notdetails">@notdetails</a>
+    </p>
+  </footer>
+

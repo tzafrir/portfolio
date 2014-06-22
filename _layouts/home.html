@@ -1,9 +1,9 @@
----
-layout: default
-type: homePage
----
+<!DOCTYPE html>
+<html>
+{% include head %}
+<body class="homePage">
   <header>
-    <img src="assets/images/me.png">
+    <img src="images/me.png">
     <h1>Joel Califa is sad<br class="mobile"> unless he&rsquo;s<br class="tablet"> working<br class="mobile"> on cool projects.</h1>
     <p><a href="#work">Jump straight to his work</a> or read on.</p>
   </header>
@@ -16,7 +16,7 @@ type: homePage
         <p class="role"><em>President</em> at</p>
         <div class="org">
           <div class="orgInfo">
-            <img src="assets/images/designcode.svg" alt="Design &amp; Code" class="logo">
+            <img src="images/designcode.svg" alt="Design &amp; Code" class="logo">
             <div class="description">
               <span>
               A nonprofit that teaches<br class="mobile">
@@ -32,7 +32,7 @@ type: homePage
         <p class="role"><em>Director</em> at</p>
         <div class="org">
           <div class="orgInfo">
-            <img src="assets/images/designhack.svg" alt="Design &amp; Hack" class="logo">
+            <img src="images/designhack.svg" alt="Design &amp; Hack" class="logo">
             <div class="description">
               <span>
               The first and largest<br class="mobile">
@@ -48,7 +48,7 @@ type: homePage
         <p class="role"><em>Designer</em> at</p>
         <div class="org">
           <div class="orgInfo">
-            <img src="assets/images/amicus.svg" alt="Amicus" class="logo">
+            <img src="images/amicus.svg" alt="Amicus" class="logo">
             <div class="description">
               <span>
               A YC startup that helps turn<br class="mobile">
@@ -204,3 +204,8 @@ type: homePage
     <h3>Colophon</h3>
     <p>This website is set in Freight Big Pro and Freight Sans Pro.</p>
   </footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="scripts/sad.js"></script>
+</body>
+</html>
