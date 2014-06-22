@@ -580,8 +580,11 @@ footer h3 {
   .mobile {
     display: none;
   }
-  .tablet {
+  br.tablet {
     display: inline;
+  }
+  figure.tablet {
+    display: block;
   }
   ul.work {
     zoom: 1;
@@ -613,6 +616,9 @@ footer h3 {
   }
   .full {
     display: inline;
+  }
+  figure.full {
+    display: block;
   }
   html {
     text-align: left;
@@ -672,17 +678,93 @@ footer h3 {
     padding-top: 1.3rem;
     height: 8rem;
   }
-  .orgInfo {
-    height: 17rem;
-  }
   .currentStuff li {
     margin-top: 0.5rem;
   }
+  .currentStuff li.designCode .orgInfo .logo {
+    margin-top: 1.5rem;
+    width: 6rem;
+  }
   .currentStuff li.designHack .orgInfo .logo {
-    margin: 0.9rem auto 0.475rem;
+    margin-top: 1.4rem;
+    width: 7rem;
   }
   .currentStuff li.amicus .orgInfo .logo {
-    margin: 2.95rem auto 2.95rem;
+    margin-top: 3.5rem;
+    width: 8rem;
+    max-width: 8rem;
+  }
+  .currentStuff .org {
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000;
+    position: relative;
+  }
+  .currentStuff .org .orgInfo {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    padding: 0 !important;
+    height: 10rem;
+    -webkit-transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -o-transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -ms-transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .currentStuff .org .orgInfo div.img {
+    background: #f00;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: url("images/nowbg1.jpg");
+    top: 0;
+    right: 0;
+  }
+  .currentStuff .org .orgInfo div.description {
+    background: #fff;
+    color: #000;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    text-shadow: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    width: 100%;
+    margin-top: 0;
+    padding: 0;
+  }
+  .currentStuff .org .orgInfo div.description span {
+    margin-top: 2.7rem;
+    display: block;
+  }
+  .currentStuff .org:hover .orgInfo {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    -webkit-transition: 0.2s ease;
+    -moz-transition: 0.2s ease;
+    -o-transition: 0.2s ease;
+    -ms-transition: 0.2s ease;
+    transition: 0.2s ease;
   }
 }
 @media all and (min-width: 80rem) {

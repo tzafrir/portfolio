@@ -1,8 +1,7 @@
 a[target="_blank"]:before
-  content: '(external) ' //TODO
+  content: '(external) ' //TODO replace with icon
 
 header
-  margin-bottom 5rem
   nav
     position relative
     width 30rem
@@ -27,6 +26,29 @@ header
     font-weight 400
 
 section
+  padding-top 0
   text-align left
+  max-width 45rem
   &:before
     display none
+
+
+figure
+  clearfix()
+  max-width 55em
+  margin 2rem auto 0
+  padding 0 2rem
+  display block
+  img
+    max-width 100%
+    border 2px solid #ddd
+  figcaption
+    margin-top -3px
+    background #ddd
+    padding 1rem
+    line-height 1.3rem
+    text-align center
+
+section figure
+  margin 5rem -2rem 0
+

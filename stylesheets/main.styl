@@ -366,8 +366,10 @@ footer
 @media all and (min-width: 45rem)
   .mobile
     display none
-  .tablet
+  br.tablet
     display inline
+  figure.tablet
+    display block
 
   ul.work
     clearfix()
@@ -387,6 +389,9 @@ footer
     display none
   .full
     display inline
+  figure.full
+    display block
+
 
   html
     text-align left
@@ -423,19 +428,62 @@ footer
   ul.work li.project a, ul.writing li.post a
     padding-top 1.3rem
     height 8rem
-
-  .orgInfo
-    height 17rem
   
   .currentStuff
     li
       margin-top 0.5rem
 
+      &.designCode .orgInfo .logo
+        margin-top 1.5rem
+        width 6rem
+
       &.designHack .orgInfo .logo
-        margin .9rem auto .475rem
+        margin-top 1.4rem
+        width 7rem
 
       &.amicus .orgInfo .logo
-        margin 2.95rem auto 2.95rem
+        margin-top 3.5rem
+        width 8rem
+        max-width 8rem
+
+    .org
+      perspective 1000
+      position relative
+      .orgInfo
+        transform-style preserve-3d
+        backface-visibility hidden
+        padding 0 !important
+        height 10rem
+        transition 1s cubic-bezier(0.680, -0.550, 0.265, 1.550)
+        
+        div.img
+          background red
+          position relative
+          height 100%
+          width 100%
+          position absolute
+          background url('images/nowbg1.jpg')
+          top 0
+          right 0
+        div.description
+          background white
+          color black
+          transform: rotateY( 180deg )
+          text-shadow none
+          position absolute
+          top 0
+          left 0
+          height 100%
+          backface-visibility hidden
+          width 100%
+          margin-top 0
+          padding 0
+          span
+            margin-top 2.7rem
+            display block
+      &:hover .orgInfo
+        transform: rotateY( 180deg )
+        transition 0.2s ease
 
 
 @media all and (min-width: 80rem)
