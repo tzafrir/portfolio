@@ -75,6 +75,7 @@ a[target="_blank"]:before
   ul.work
     li.project
       &.current
+        display none
         background-image url('../images/grey.jpg')
         a:hover
           border 2px solid black
@@ -84,10 +85,12 @@ a[target="_blank"]:before
             display none
 
 
-
-.current 
-  display none
-
 @media all and (min-width: 45rem)
   .current
-    display block
+    display block !important
+  .workPage .thisProject
+    padding 4rem
+
+@media all and (min-width: 65rem)
+  .workPage .thisProject
+      padding 0

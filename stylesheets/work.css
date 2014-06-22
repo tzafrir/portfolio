@@ -81,6 +81,7 @@ a[target="_blank"]:before {
   text-align: center;
 }
 .workPage ul.work li.project.current {
+  display: none;
   background-image: url("../images/grey.jpg");
 }
 .workPage ul.work li.project.current a:hover {
@@ -91,11 +92,16 @@ a[target="_blank"]:before {
 .workPage ul.work li.project.current a:hover:after {
   display: none;
 }
-.current {
-  display: none;
-}
 @media all and (min-width: 45rem) {
   .current {
-    display: block;
+    display: block !important;
+  }
+  .workPage .thisProject {
+    padding: 4rem;
+  }
+}
+@media all and (min-width: 65rem) {
+  .workPage .thisProject {
+    padding: 0;
   }
 }
