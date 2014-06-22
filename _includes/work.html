@@ -2,68 +2,58 @@
     <h2>More case studies</h2>
     <ul class="work">
 
-      <li class="project amicus">
-        <a href="#">
-          <h3 class="title">Amicus</h3>
-          <p class="description">Select work from 2012-2014</p>
+      {% for post in site.posts limit: 7 %}
+
+      <li>
+        <a href="{{post.url}}">
+          <h3 class="title">{{post.title}}</h3>
+          <p class="description">{{post.boxDescription}}</p>
         </a>
       </li>
 
-      <li class="project crypt current">
-        <a>
-          <h3 class="title">Crypt</h3>
-          <p class="description">You are here :)</p>
-        </a>
-      </li>
+      {% endfor %}
 
-      <li class="project trove">
-        <a href="/work/trove.html">
-          <h3 class="title">Trove</h3>
-          <p class="description">The invisible floating treasure chest<br> you always wanted but never had.</p>
-        </a>
-      </li>
-
-      <li class="project designCode">
-        <a href="/work/designandcode.html">
+      <!-- <li class="project designCode">
+        <a href="/work/designandcode">
           <h3 class="title">Design &amp; Code</h3>
           <p class="description">Several iterations of design work<br> on a non-profit and a hackthon.</p>
         </a>
       </li>
 
       <li class="project doShare">
-        <a>
+        <a href="/work/doshare">
           <h3 class="title">Do Share</h3>
           <p class="description">The first Google+ post scheduling app.<br class="mobile tablet"> Over 27,000 users to date.</p>
         </a>
       </li>
 
       <li class="project rotationship">
-        <a href="/work/rotationship.html">
+        <a href="/work/rotationship">
           <h3 class="title">The Rotationship</h3>
           <p class="description">Designed a site for a year-long<br> fellowship program in Silicon Valley.</p>
         </a>
       </li>
 
       <li class="project slaughterhouse">
-        <a href="/work/slaughterhouse22.html">
+        <a href="/work/slaughterhouse22">
           <h3 class="title">Slaughterhouse 22</h3>
           <p class="description">A mashup of two of<br class="full"> my favorite books.</p>
         </a>
       </li>
 
       <li class="project rendezvous">
-        <a href="/work/rendezvous.html">
+        <a href="/work/rendezvous">
           <h3 class="title">Rendezvous</h3>
           <p class="description">An app coupled with<br class="full"> a platonic pickup bar.</p>
         </a>
       </li>
 
       <li class="project assorted">
-        <a href="/work/assorted.html">
+        <a href="/work/assorted">
           <h3 class="title">Assorted Goods</h3>
           <p class="description">This and that. And this.</p>
         </a>
-      </li>
+      </li> -->
     </ul>
 
   </section>

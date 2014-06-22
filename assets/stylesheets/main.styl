@@ -265,7 +265,7 @@ section#work:before
 section.contact:before
   content 'c'
 
-li.project, li.post
+.work li, .writing li
   width 100%
   text-align center
   padding 1rem
@@ -387,7 +387,7 @@ footer
 
   ul.work
     clearfix()
-    li.project
+    li
       width 48%
       float left
       margin-right 4%
@@ -405,9 +405,6 @@ footer
     display inline
   figure.full, iframe.full, p.full
     display block
-
-
-
   html
     text-align left
 
@@ -431,7 +428,7 @@ footer
     .mobile
       display inline
 
-  ul.work li.project, ul.writing li.post, ul.currentStuff li
+  ul.work li, ul.writing li, ul.currentStuff li
     float left
     width 31% !important
     margin-right 3.5%
@@ -440,8 +437,8 @@ footer
     &:nth-child(3n)
       margin-right 0
 
-  ul.work li.project a, ul.writing li.post a
-    height 8rem
+  ul.work li a, ul.writing li a
+    height 8rem !important
   
   .currentStuff
     li

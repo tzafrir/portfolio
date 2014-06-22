@@ -429,8 +429,8 @@ section#work:before {
 section.contact:before {
   content: 'c';
 }
-li.project,
-li.post {
+.work li,
+.writing li {
   width: 100%;
   text-align: center;
   padding: 1rem;
@@ -442,8 +442,8 @@ li.post {
   background-position: 50% 50%;
   position: relative;
 }
-li.project a,
-li.post a {
+.work li a,
+.writing li a {
   border: 2px solid #000;
   padding: 1rem;
   display: block;
@@ -461,8 +461,8 @@ li.post a {
   color: #000;
   border: 2px solid #000;
 }
-li.project a:hover,
-li.post a:hover {
+.work li a:hover,
+.writing li a:hover {
   background: rgba(255,255,255,0.4);
   border: 2px solid #000;
   -webkit-transition: all 0.1s ease-in-out;
@@ -473,8 +473,8 @@ li.post a:hover {
   border-top: 10px solid #000;
   padding-top: 1.1rem;
 }
-li.project a:hover:after,
-li.post a:hover:after {
+.work li a:hover:after,
+.writing li a:hover:after {
   content: '...';
   font-size: 2rem;
   color: #fff;
@@ -483,39 +483,39 @@ li.post a:hover:after {
   width: 1.5rem;
   position: absolute;
 }
-li.project a h3,
-li.post a h3 {
+.work li a h3,
+.writing li a h3 {
   margin-bottom: 0.5rem;
   font-family: "freight-sans-pro", sans-serif;
   font-weight: 600;
 }
-li.project.seen,
-li.post.seen {
+.work li.seen,
+.writing li.seen {
   color: #f00;
   opacity: 0.3;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
   filter: alpha(opacity=30);
 }
-li.project.seen:before,
-li.post.seen:before {
+.work li.seen:before,
+.writing li.seen:before {
   content: '\2713  Seen';
   display: block;
   position: absolute;
   top: 0.5rem;
   left: 0.5rem;
 }
-li.project.seen:hover,
-li.post.seen:hover {
+.work li.seen:hover,
+.writing li.seen:hover {
   opacity: 1;
   -ms-filter: none;
   filter: none;
 }
-li.project.post,
-li.post.post {
+.work li.post,
+.writing li.post {
   background-image: url("../images/link1.jpg");
 }
-li.project.post h3,
-li.post.post h3 {
+.work li.post h3,
+.writing li.post h3 {
   font-weight: 400;
 }
 footer {
@@ -546,12 +546,12 @@ footer h3 {
   ul.work:after {
     clear: both;
   }
-  ul.work li.project {
+  ul.work li {
     width: 48%;
     float: left;
     margin-right: 4%;
   }
-  ul.work li.project:nth-child(2n) {
+  ul.work li:nth-child(2n) {
     margin-right: 0;
   }
   ul.writing .post a {
@@ -606,26 +606,26 @@ footer h3 {
   .currentStuff li .mobile {
     display: inline;
   }
-  ul.work li.project,
-  ul.writing li.post,
+  ul.work li,
+  ul.writing li,
   ul.currentStuff li {
     float: left;
     width: 31% !important;
     margin-right: 3.5%;
   }
-  ul.work li.project:nth-child(2n),
-  ul.writing li.post:nth-child(2n),
+  ul.work li:nth-child(2n),
+  ul.writing li:nth-child(2n),
   ul.currentStuff li:nth-child(2n) {
     margin-right: 3.5%;
   }
-  ul.work li.project:nth-child(3n),
-  ul.writing li.post:nth-child(3n),
+  ul.work li:nth-child(3n),
+  ul.writing li:nth-child(3n),
   ul.currentStuff li:nth-child(3n) {
     margin-right: 0;
   }
-  ul.work li.project a,
-  ul.writing li.post a {
-    height: 8rem;
+  ul.work li a,
+  ul.writing li a {
+    height: 8rem !important;
   }
   .currentStuff li {
     margin-top: 0.5rem;
