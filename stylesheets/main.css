@@ -489,20 +489,6 @@ li.post a h3 {
   font-family: "freight-sans-pro", sans-serif;
   font-weight: 600;
 }
-li.project.current,
-li.post.current {
-  background-image: url("../images/grey.jpg");
-}
-li.project.current a:hover,
-li.post.current a:hover {
-  border: 2px solid #000;
-  background: transparent;
-  padding-top: 1.4rem;
-}
-li.project.current a:hover:after,
-li.post.current a:hover:after {
-  display: none;
-}
 li.project.seen,
 li.post.seen {
   color: #f00;
@@ -579,7 +565,9 @@ footer h3 {
   .full {
     display: inline;
   }
-  figure.full {
+  figure.full,
+  iframe.full,
+  p.full {
     display: block;
   }
   html {
@@ -637,7 +625,6 @@ footer h3 {
   }
   ul.work li.project a,
   ul.writing li.post a {
-    padding-top: 1.3rem;
     height: 8rem;
   }
   .currentStuff li {

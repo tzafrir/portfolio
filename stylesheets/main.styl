@@ -305,27 +305,6 @@ li.project, li.post
       margin-bottom 0.5rem
       font-family "freight-sans-pro", sans-serif
       font-weight 600
-  &.current
-    background-image url('../images/grey.jpg')
-    a:hover
-      border 2px solid black
-      background transparent
-      padding-top 1.4rem
-      &:after
-        display none
-
-
-  // &:after
-  //   display block
-  //   content ''
-  //   position absolute
-  //   top 0
-  //   left 0
-  //   width 100%
-  //   height 100%
-  //   background rgba(0,0,0,0.4)
-  //   z-index 1
-
     
 
   // Check if this can even work anymore
@@ -424,8 +403,9 @@ footer
     display none
   .full
     display inline
-  figure.full
+  figure.full, iframe.full, p.full
     display block
+
 
 
   html
@@ -461,7 +441,6 @@ footer
       margin-right 0
 
   ul.work li.project a, ul.writing li.post a
-    padding-top 1.3rem
     height 8rem
   
   .currentStuff

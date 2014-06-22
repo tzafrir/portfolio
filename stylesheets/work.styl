@@ -22,38 +22,72 @@ a[target="_blank"]:before
     h1
       margin-top 2rem
       margin-bottom 0.5rem
-    h3
+    h2
       font-family "freight-sans-pro", sans-serif
       font-weight 400
+      font-size 1.5rem
+      padding-top 0
 
-  section
-    padding-top 0
-    text-align left
-    max-width 45rem
+  h2, section
     &:before
-      display none
+      display: none
 
-  section.work
-    max-width 63rem
-    margin-top 5rem
-
-
-  figure
-    clearfix()
-    max-width 55em
-    margin 2rem auto 0
+  .thisProject
     padding 0 2rem
-    display block
+    p, h2
+      padding-top 0
+      text-align left
+      max-width 45rem
+      margin 0 auto
+    h2
+      font-family "freight-display-pro", serif
+      font-size 1.6rem
+      margin 3rem auto 0.4rem
+    p
+      font-family "freight-sans-pro", sans-serif
+
     img
       max-width 100%
-      border 2px solid #ddd
-    figcaption
-      margin-top -3px
-      background #ddd
-      padding 1rem
-      line-height 1.3rem
-      text-align center
+      margin 2rem auto
+      display block
 
-  section figure
-    margin 5rem -2rem 0
+    figure
+      clearfix()
+      max-width 55em
+      margin 2rem auto
+      width auto
+      img
+        max-width 100%
+        border 2px solid #ddd
+        margin 0 auto
+      figcaption
+        margin-top -3px
+        background #ddd
+        padding 1rem
+        line-height 1.3rem
+        text-align center
 
+  footer
+    margin 3rem auto
+    padding-top 0
+    text-align center
+
+  ul.work
+    li.project
+      &.current
+        background-image url('../images/grey.jpg')
+        a:hover
+          border 2px solid black
+          background transparent
+          padding-top 1.4rem
+          &:after
+            display none
+
+
+
+.current 
+  display none
+
+@media all and (min-width: 45rem)
+  .current
+    display block
