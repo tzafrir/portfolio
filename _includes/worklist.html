@@ -1,0 +1,39 @@
+<section class="work">
+    <h2>
+      {% if page.type == "homePage" %}
+        He has the nerve to make you<br class="mobile"> wait this long to see his work.
+      {% else %}
+        More case studies
+      {% endif %}
+    </h2>
+    <ul class="work">
+
+      {% for project in site.categories.work limit: 9 %}
+
+      <li>
+        <a href="{{project.url}}">
+          <h3 class="title">{{project.title}}</h3>
+          <p class="description">{{project.boxDescription}}</p>
+        </a>
+      </li>
+
+      {% endfor %}
+
+      <!-- 
+
+      <li class="project rendezvous">
+        <a href="/work/rendezvous">
+          <h3 class="title">Rendezvous</h3>
+          <p class="description">An app coupled with<br class="full"> a platonic pickup bar.</p>
+        </a>
+      </li>
+
+      <li class="project assorted">
+        <a href="/work/assorted">
+          <h3 class="title">Assorted Goods</h3>
+          <p class="description">This and that. And this.</p>
+        </a>
+      </li> -->
+    </ul>
+
+  </section>
