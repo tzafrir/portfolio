@@ -94,14 +94,6 @@ a img {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-section,
-header,
-footer {
-  padding: 1rem 2rem;
-  max-width: 63rem;
-  margin-left: auto;
-  margin-right: auto;
-}
 * {
   font-family: "freight-sans-pro", sans-serif;
 }
@@ -141,12 +133,13 @@ a {
 a:hover {
   color: #f19929;
 }
-.tablet,
-.full {
-  display: none;
-}
-.mobile {
-  display: inline;
+section,
+header,
+footer {
+  padding: 1rem 2rem;
+  max-width: 63rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 header {
   width: 100%;
@@ -272,11 +265,11 @@ section h2 {
   background: linear-gradient(to bottom, #3d67c0, #8eceec);
 }
 .oldButton:after {
-  position: absolute;
   display: block;
+  position: absolute;
+  content: '';
   top: 0;
   left: 5%;
-  content: '';
   -webkit-border-radius: 100px;
   border-radius: 100px;
   width: 90%;
@@ -305,8 +298,8 @@ section h2 {
 }
 .oldButton:active:before {
   display: block;
-  content: '';
   position: absolute;
+  content: '';
   background: #132651;
   margin-top: 0.5rem;
   width: 80%;
@@ -318,14 +311,14 @@ section h2 {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
   filter: alpha(opacity=20);
 }
-h2.delight {
+.delight h2 {
   -webkit-transition: 0.7s color;
   -moz-transition: 0.7s color;
   -o-transition: 0.7s color;
   -ms-transition: 0.7s color;
   transition: 0.7s color;
 }
-h2.delight:hover {
+.delight h2:hover {
   color: #f0582d;
   -webkit-transition: none;
   -moz-transition: none;
@@ -333,14 +326,14 @@ h2.delight:hover {
   -ms-transition: none;
   transition: none;
 }
-h2.delight span.animate {
+.delight h2 span.animate {
   font-weight: bold;
 }
-h2.delight span.animate span {
+.delight h2 span.animate span {
   display: inline-block;
   position: relative;
 }
-h2.delight.animating span.animate span {
+.delight h2.animating span.animate span {
   -webkit-animation-duration: 0.6s;
   -moz-animation-duration: 0.6s;
   -o-animation-duration: 0.6s;
@@ -352,49 +345,49 @@ h2.delight.animating span.animate span {
   -ms-animation-name: bounce;
   animation-name: bounce;
 }
-h2.delight span.animate span:nth-child(1) {
+.delight h2 span.animate span:nth-child(1) {
   -webkit-animation-delay: 0.04s;
   -moz-animation-delay: 0.04s;
   -o-animation-delay: 0.04s;
   -ms-animation-delay: 0.04s;
   animation-delay: 0.04s;
 }
-h2.delight span.animate span:nth-child(2) {
+.delight h2 span.animate span:nth-child(2) {
   -webkit-animation-delay: 0.08s;
   -moz-animation-delay: 0.08s;
   -o-animation-delay: 0.08s;
   -ms-animation-delay: 0.08s;
   animation-delay: 0.08s;
 }
-h2.delight span.animate span:nth-child(3) {
+.delight h2 span.animate span:nth-child(3) {
   -webkit-animation-delay: 0.12s;
   -moz-animation-delay: 0.12s;
   -o-animation-delay: 0.12s;
   -ms-animation-delay: 0.12s;
   animation-delay: 0.12s;
 }
-h2.delight span.animate span:nth-child(4) {
+.delight h2 span.animate span:nth-child(4) {
   -webkit-animation-delay: 0.16s;
   -moz-animation-delay: 0.16s;
   -o-animation-delay: 0.16s;
   -ms-animation-delay: 0.16s;
   animation-delay: 0.16s;
 }
-h2.delight span.animate span:nth-child(5) {
+.delight h2 span.animate span:nth-child(5) {
   -webkit-animation-delay: 0.2s;
   -moz-animation-delay: 0.2s;
   -o-animation-delay: 0.2s;
   -ms-animation-delay: 0.2s;
   animation-delay: 0.2s;
 }
-h2.delight span.animate span:nth-child(6) {
+.delight h2 span.animate span:nth-child(6) {
   -webkit-animation-delay: 0.24s;
   -moz-animation-delay: 0.24s;
   -o-animation-delay: 0.24s;
   -ms-animation-delay: 0.24s;
   animation-delay: 0.24s;
 }
-h2.delight span.animate span:nth-child(7) {
+.delight h2 span.animate span:nth-child(7) {
   -webkit-animation-delay: 0.28s;
   -moz-animation-delay: 0.28s;
   -o-animation-delay: 0.28s;
@@ -419,15 +412,6 @@ h2.delight span.animate span:nth-child(7) {
   -ms-filter: none;
   filter: none;
   margin-top: 0;
-}
-section.writing:before {
-  content: 'w';
-}
-section#work:before {
-  content: 'd';
-}
-section.contact:before {
-  content: 'c';
 }
 .work li,
 .writing li {
@@ -489,23 +473,23 @@ section.contact:before {
   font-family: "freight-sans-pro", sans-serif;
   font-weight: 600;
 }
-.work li.seen,
-.writing li.seen {
+.work li a.seen,
+.writing li a.seen {
   color: #f00;
   opacity: 0.3;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
   filter: alpha(opacity=30);
 }
-.work li.seen:before,
-.writing li.seen:before {
+.work li a.seen:before,
+.writing li a.seen:before {
   content: '\2713  Seen';
   display: block;
   position: absolute;
   top: 0.5rem;
   left: 0.5rem;
 }
-.work li.seen:hover,
-.writing li.seen:hover {
+.work li a.seen:hover,
+.writing li a.seen:hover {
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -518,12 +502,144 @@ section.contact:before {
 .writing li.post h3 {
   font-weight: 400;
 }
+section.writing:before {
+  content: 'w';
+}
+section#work:before {
+  content: 'd';
+}
+section.contact:before {
+  content: 'c';
+}
 footer {
   padding-top: 4rem;
 }
 footer h3 {
   margin-bottom: 0.5rem;
   font-weight: normal;
+}
+a[target="_blank"]:before {
+  content: '(external) ';
+}
+.workPage header nav {
+  position: relative;
+  width: 30rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: 1rem;
+}
+.workPage header nav a {
+  position: absolute;
+  display: block;
+  top: 40%;
+  text-align: center;
+  font-size: 1.4rem;
+}
+.workPage header nav a.home {
+  left: 10%;
+}
+.workPage header nav a.blog {
+  right: 10%;
+}
+.workPage header h1 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+.workPage header h2 {
+  font-family: "freight-sans-pro", sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  padding-top: 0;
+}
+.workPage h2:before,
+.workPage section:before {
+  display: none;
+}
+.workPage .thisProject {
+  padding: 0 2rem;
+}
+.workPage .thisProject p,
+.workPage .thisProject h2 {
+  padding-top: 0;
+  text-align: left;
+  max-width: 45rem;
+  margin: 0 auto;
+}
+.workPage .thisProject h2 {
+  font-family: "freight-display-pro", serif;
+  font-size: 1.6rem;
+  margin: 3rem auto 0.4rem;
+}
+.workPage .thisProject p {
+  font-family: "freight-sans-pro", sans-serif;
+}
+.workPage .thisProject img {
+  max-width: 100%;
+  margin: 2rem auto;
+  display: block;
+}
+.workPage .thisProject figure {
+  zoom: 1;
+  max-width: 55em;
+  margin: 2rem auto;
+  width: auto;
+}
+.workPage .thisProject figure:before,
+.workPage .thisProject figure:after {
+  content: "";
+  display: table;
+}
+.workPage .thisProject figure:after {
+  clear: both;
+}
+.workPage .thisProject figure img {
+  max-width: 100%;
+  border: 2px solid #ddd;
+  margin: 0 auto;
+}
+.workPage .thisProject figure figcaption {
+  margin-top: -3px;
+  background: #ddd;
+  padding: 1rem;
+  line-height: 1.3rem;
+  text-align: center;
+}
+.workPage footer {
+  margin: 3rem auto;
+  padding-top: 0;
+  text-align: center;
+}
+.workPage ul.work li.project.current {
+  display: none;
+  background-image: url("../images/grey.jpg");
+}
+.workPage ul.work li.project.current a:hover {
+  border: 2px solid #000;
+  background: transparent;
+  padding-top: 1.4rem;
+}
+.workPage ul.work li.project.current a:hover:after {
+  display: none;
+}
+@media all and (min-width: 45rem) {
+  .current {
+    display: block !important;
+  }
+  .workPage .thisProject {
+    padding: 4rem;
+  }
+}
+@media all and (min-width: 65rem) {
+  .workPage .thisProject {
+    padding: 0;
+  }
+}
+.tablet,
+.full {
+  display: none;
+}
+.mobile {
+  display: inline;
 }
 @media all and (min-width: 45rem) {
   .mobile {
@@ -741,24 +857,24 @@ footer h3 {
   }
   .homePage section:after,
   .homePage footer:after {
-    border-left: 1px dashed #999;
-    z-index: -1;
-    content: '';
-    height: 100%;
     display: block;
     position: absolute;
+    content: '';
+    border-left: 1px dashed #999;
+    z-index: -1;
+    height: 100%;
     top: 0;
     left: 7.5rem;
   }
   .homePage header:after {
+    display: block;
+    position: absolute;
+    content: '';
     border-right: 1px dashed #999;
     border-top: 1px dashed #999;
     z-index: -1;
-    content: '';
     height: 3rem;
     width: 3rem;
-    display: block;
-    position: absolute;
     bottom: 0;
     left: 4.5rem;
     -webkit-border-radius: 0 2rem 0 0;

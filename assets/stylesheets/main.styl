@@ -1,18 +1,19 @@
 @import nib
 
-// Global Layout
+// ------------ GLOBAL LAYOUT ------------ //
+
 global-reset()
 
 *
   box-sizing border-box
 
-section, header, footer
-  padding 1rem 2rem
-  max-width 63rem
-  margin-left auto
-  margin-right auto
+realBoy()
+  display block
+  position absolute
+  content ''
 
-// Global Typography
+
+// ------------ GLOBAL TYPOGRAPHY ------------ //
 
 *
   font-family "freight-sans-pro", sans-serif
@@ -49,14 +50,16 @@ a
   &:hover
     color #f19929
 
-.tablet, .full
-  display none
-.mobile
-  display inline
 
+// ------------ HOMEPAGE ------------ //
 
-// Homepage
-//// Header
+section, header, footer
+  padding 1rem 2rem
+  max-width 63rem
+  margin-left auto
+  margin-right auto
+
+// Header
 
 header
   width 100%
@@ -77,7 +80,8 @@ header
     margin 0 auto
 
 
-//// Sections
+// Sections
+
 section
   &:before
     content 'i'
@@ -171,11 +175,9 @@ section
   &:hover
     background linear-gradient(top, lighten(#365baa, 10%), lighten(#81c8ea, 10%)) 
   &:after
-    position absolute
-    display block
+    realBoy()
     top 0
     left 5%
-    content ''
     border-radius 100px
     width 90%
     padding 0.5rem 0
@@ -191,9 +193,7 @@ section
       border-radius 10px 10px 0 0 / 5px 5px 0 0
       opacity 0.7
     &:before
-      display block
-      content ''
-      position absolute
+      realBoy()
       background darken(#254ca2,50%)
       margin-top 0.5rem
       width 80%
@@ -202,7 +202,8 @@ section
       box-shadow 0px 0px 15px black, 0 0 30px white
       opacity 0.2
 
-////// Delight
+
+// Delight
 
 $offset = -2rem
 $duration = 0.6s
@@ -217,53 +218,44 @@ $letters = (1..7)
   90%
     transform translateY($offset * -0.1)
 
-h2.delight
-  &:hover
-    color #f0582d
-    transition none
 
-  transition 0.7s color
-  
-  span.animate
-    font-weight bold
-    span
-      display inline-block
-      position relative
+.delight 
+  h2
+    &:hover
+      color #f0582d
+      transition none
 
-  &.animating
-    span.animate span
-      animation-duration $duration
-      animation-name bounce
+    transition 0.7s color
+    
+    span.animate
+      font-weight bold
+      span
+        display inline-block
+        position relative
 
-  for letter in $letters
-    span.animate span:nth-child({letter})
-      animation-delay 0.04s * letter
+    &.animating
+      span.animate span
+        animation-duration $duration
+        animation-name bounce
 
-.delight p {
-  opacity 0
-  position relative
-  z-index -1
-  margin-top -2rem
-  transition all 0.2s
-  &.shown {
-    opacity 1
-    margin-top 0
+    for letter in $letters
+      span.animate span:nth-child({letter})
+        animation-delay 0.04s * letter
+
+  p {
+    opacity 0
+    position relative
+    z-index -1
+    margin-top -2rem
+    transition all 0.2s
+    &.shown {
+      opacity 1
+      margin-top 0
+    }
   }
-}
-////// Work
 
-// TODO replace with icons
-// book
-section.writing:before
-  content 'w'
 
-// pen
-section#work:before
-  content 'd'
-
-// phone? mail? twitter logo?
-section.contact:before
-  content 'c'
+// Writing + Work
 
 .work li, .writing li
   width 100%
@@ -306,25 +298,38 @@ section.contact:before
       font-family "freight-sans-pro", sans-serif
       font-weight 600
     
-
-  // Check if this can even work anymore
-  &.seen
-    color red
-    opacity 0.3
-    &:before
-      content '\2713  Seen'
-      display block
-      position absolute
-      top 0.5rem
-      left 0.5rem
-    &:hover
-      opacity 1
+    &.seen // Check if this can even work anymore
+      color red
+      opacity 0.3
+      &:before
+        content '\2713  Seen'
+        display block
+        position absolute
+        top 0.5rem
+        left 0.5rem
+      &:hover
+        opacity 1
 
   &.post
     background-image url('../images/link1.jpg')
     h3
       font-weight 400
 
+// Icons TODO
+
+// book
+section.writing:before
+  content 'w'
+
+// pen
+section#work:before
+  content 'd'
+
+// phone? mail? twitter logo?
+section.contact:before
+  content 'c'
+
+// Footer
 
 footer
   padding-top 4rem
@@ -332,50 +337,116 @@ footer
     margin-bottom 0.5rem
     font-weight normal
 
-// .project.amicus
-//   background-image url('../images/blue.jpg')
-//   background-size auto 200%
-//   background-position 20% 50%
-//   &:after
-//     background transparent !important
 
-// .project.rendezvous
-//   background-image url('../images/test.jpg')
-//   background-size auto 200%
-//   background-position 20% 50%
-//   &:after
-//     background transparent !important
+// ------------ WORK PAGE ------------ //
 
-// .project.rotationship
-//   background-image url('../images/lightblue.jpg')
-//   background-size 100% auto
-//   &:after
-//     background transparent !important
+a[target="_blank"]:before
+  content: '(external) ' //TODO replace with icon
 
-// .project.doShare
-//   background-image url('../images/grape.jpg')
-//   background-size 100% auto
-//   &:after
-//     background transparent !important
+.workPage
+  header
+    nav
+      position relative
+      width 30rem
+      max-width 100%
+      margin 0 auto
+      padding-left 1rem
+      a
+        position absolute
+        display block
+        top 40%
+        text-align center
+        font-size 1.4rem
+        &.home
+          left 10%
+        &.blog
+          right 10%
+    h1
+      margin-top 2rem
+      margin-bottom 0.5rem
+    h2
+      font-family "freight-sans-pro", sans-serif
+      font-weight 400
+      font-size 1.5rem
+      padding-top 0
 
-// .project.trove
-//   background-image url('../images/purple.jpg')
-//   background-size 100% auto
-//   &:after
-//     background transparent !important
+  h2, section
+    &:before
+      display: none
 
-// .project.crypt
-//   background-image url('../images/grey.jpg')
-//   background-size 100% auto
-//   &:after
-//     background transparent !important
+  .thisProject
+    padding 0 2rem
+    p, h2
+      padding-top 0
+      text-align left
+      max-width 45rem
+      margin 0 auto
+    h2
+      font-family "freight-display-pro", serif
+      font-size 1.6rem
+      margin 3rem auto 0.4rem
+    p
+      font-family "freight-sans-pro", sans-serif
 
-// .project.designCode
-//   background-image url('../images/nowbg2.jpg')
-//   background-size 100% auto
-//   &:after
-//     background transparent !important
+    img
+      max-width 100%
+      margin 2rem auto
+      display block
 
+    figure
+      clearfix()
+      max-width 55em
+      margin 2rem auto
+      width auto
+      img
+        max-width 100%
+        border 2px solid #ddd
+        margin 0 auto
+      figcaption
+        margin-top -3px
+        background #ddd
+        padding 1rem
+        line-height 1.3rem
+        text-align center
+
+  footer
+    margin 3rem auto
+    padding-top 0
+    text-align center
+
+  ul.work
+    li.project
+      &.current
+        display none
+        background-image url('../images/grey.jpg')
+        a:hover
+          border 2px solid black
+          background transparent
+          padding-top 1.4rem
+          &:after
+            display none
+
+
+@media all and (min-width: 45rem)
+  .current
+    display block !important
+  .workPage .thisProject
+    padding 4rem
+
+@media all and (min-width: 65rem)
+  .workPage .thisProject
+      padding 0
+
+
+
+// ------------ MOBILE ------------ //
+
+.tablet, .full
+  display none
+.mobile
+  display inline
+
+// ------------ TABLET ------------ //
 
 @media all and (min-width: 45rem)
   .mobile
@@ -397,6 +468,8 @@ footer
   ul.writing .post a
     height 6.6rem
 
+
+// ------------ SMALL DESKTOP ------------ //
 
 @media all and (min-width: 65rem)
   .tablet
@@ -497,6 +570,9 @@ footer
         transition 0.2s ease
 
 
+
+// ------------ LARGE DESKTOP ------------ //
+
 @media all and (min-width: 80rem)
 
   .homePage
@@ -504,7 +580,6 @@ footer
       max-width 73rem
       padding-left 10rem
       position relative
-
 
     header
       text-align left
@@ -520,24 +595,20 @@ footer
         padding-left 1rem
 
     section:after, footer:after
+      realBoy()
       border-left: 1px dashed #999
       z-index -1
-      content ''
       height 100%
-      display block
-      position absolute
       top 0
       left 7.5rem
 
     header:after
+      realBoy()
       border-right: 1px dashed #999
       border-top: 1px dashed #999
       z-index -1
-      content ''
       height 3rem
       width 3rem
-      display block
-      position absolute
       bottom 0
       left 4.5rem
       border-radius 0 2rem 0 0
