@@ -1,23 +1,29 @@
 ---
 layout: default
-type: workPage
+type: page
 ---
   
 <header>
+  <img src="/assets/images/me.png">
   <nav>
     <a class="home" href="/">Home</a>
-    <img src="/assets/images/me.png">
-    <a class="blog" href="/">Blog</a>
+    <a class="work" href="/work">Work</a>
+    <a class="blog" href="/blog">Blog</a>
   </nav>
   <h1>{{ page.title }}</h1>
   <h2>{{ page.description }}</h2>
 </header>
 
-<div class="thisProject">
+<div class="content">
   {{ content }}  
 </div>
 
+{% if page.categories contains "work" %}
 {% include worklist.html %}
+{% elsif page.categories contains "blog" %}
+{% include postlist.html %}
+{%endif%}
+
 
 
   <footer>

@@ -10,10 +10,10 @@
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ "/assets/stylesheets/main.css" | prepend: site.baseurl }}">
-    
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/stylesheets/main.css">
+
     {% if page.custom_css %}
-    <link rel="stylesheet" href="{{ "/assets/stylesheets/{{page.custom_css}}.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/stylesheets/custom/{{page.custom_css}}.css">
     {% endif %}
 
 </head>

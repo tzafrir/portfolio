@@ -8,3 +8,6 @@ paginate: 10
 markdown: rdiscount
 highlighter: pygments
 permalink: pretty
+
+
+#gems: [mini_magick, jekyll-picture-tag]
