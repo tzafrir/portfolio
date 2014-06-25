@@ -1,7 +1,7 @@
 <section id="work">
   <h2>
     {% if page.type == "homePage" %}
-      He has the nerve to make you<br class="mobile"> wait this long to see his work.
+      After a short to medium wait,<br class="mobile"> he will show you case studies.
     {% else %}
       More case studies
     {% endif %}
@@ -10,12 +10,25 @@
   <ul class="work">
     {% for project in site.categories.work limit: 9 %}
 
+    {% if project.title == page.title %}
+
+    <li class="current">
+      <a>
+        <h3 class="title">{{project.title}}</h3>
+        <p class="description">You&rsquo;re already in me! :)</p>
+      </a>
+    </li>
+
+    {% else %}
+
     <li>
       <a href="{{project.url}}">
         <h3 class="title">{{project.title}}</h3>
         <p class="description">{{project.boxDescription}}</p>
       </a>
     </li>
+
+    {% endif %}
 
     {% endfor %}
   </ul>

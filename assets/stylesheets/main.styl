@@ -344,7 +344,7 @@ a[target="_blank"]:before
   content: '(external) ' //TODO replace with icon
 
 body.page
-  h1, h2
+  h1, h2, nav
     font-family freight-big-pro, serif
     text-align left
     width 55rem
@@ -356,24 +356,36 @@ body.page
     line-height 2.5rem
 
   header
+    max-width 100%
     position relative
     padding 0
     margin-bottom 2rem
-    img
-      position absolute
-      left -2rem
+    width 100%
     nav
       position relative  
-      margin 0 auto 10rem
+      margin 0 auto 3rem
       padding-left 1rem
+      text-align right
+      img
+        position absolute
+        width 6rem
+        right -2rem
+        transition margin-top 1s ease-in-out
+        &:hover
+          margin-top -2.5rem
+          padding-bottom 2.5rem
+          transition margin-top 0.2s ease-out
+          
       a
-        display block
-        padding 0.5rem
-        padding-left 8rem
+        display inline-block
+        text-align right
+        font-family "freight-sans-pro", sans-serif
+        padding-left 1rem
+        padding-top 1.5rem
         text-align left
         font-size 1.4rem
-        &.home
-          padding-top 3rem
+        &.blog
+          margin-right 5rem
       p
         display block
         margin 0
@@ -381,6 +393,7 @@ body.page
       font-family "freight-sans-pro", sans-serif
       font-weight normal
       font-size 1.4rem
+      line-height 1.8rem
       padding-top -0.5rem
       text-align left
       border 0
@@ -437,17 +450,27 @@ body.page
     padding-top 0
     text-align center
 
+  section#work h2
+      max-width 100%
+      width: 100%
   ul.work
-    li.project
-      &.current
-        display none
-        background-image url('../images/grey.jpg')
-        a:hover
-          border 2px solid black
-          background transparent
-          padding-top 1.4rem
-          &:after
-            display none
+    li.current
+      background-image url('../images/grey.jpg')
+      a:hover
+        border 2px solid black
+        background transparent
+        padding-top 1.4rem
+    
+  section.writing h2
+      max-width 100%
+      width: 100%
+  ul.writing
+    li.current
+      background-image url('../images/grey.jpg')
+      a:hover
+        border 2px solid black
+        background transparent
+        padding-top 1.4rem
 
 
 @media all and (min-width: 45rem)
