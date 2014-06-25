@@ -5,9 +5,25 @@ url: "http://localhost:4000"
 
 paginate: 10
 
-markdown: rdiscount
+markdown: redcarpet
 highlighter: pygments
 permalink: pretty
 
+#redcarpet:
+#  extensions: [smart]
 
-#gems: [mini_magick, jekyll-picture-tag]
+picture:
+  source: "/assets/images/"
+  output: "/assets/images/generated"
+  markup: "picture"
+  presets:
+    default:
+      source_large:
+        media: "(min-width: 45)"
+        width: "880"
+      source_medium:
+        media: "(min-resolution: 45)"
+        width: "640"
+      source_default:
+        width: "320"
+

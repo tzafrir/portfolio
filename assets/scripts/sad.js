@@ -22,4 +22,9 @@ $(function() {
     }
   }
 
+
+  $('header a[href="#work"]').click(function() {
+    $('body').animate({scrollTop: $('#work').offset().top+60})
+  })
+
 })
