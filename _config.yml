@@ -9,9 +9,6 @@ markdown: redcarpet
 highlighter: pygments
 permalink: pretty
 
-#redcarpet:
-#  extensions: [smart]
-
 picture:
   source: "/assets/images/"
   output: "/assets/images/generated"
