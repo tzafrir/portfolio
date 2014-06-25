@@ -360,6 +360,7 @@ body.page
 
   header
     max-width 100%
+    overflow hidden
     position relative
     padding 0
     margin-bottom 2rem
@@ -415,7 +416,7 @@ body.page
       margin 1.5rem auto 0
       font-family "freight-text-pro", sans-serif
       font-size: 1.2rem;
-      line-height: 1.6rem;
+      line-height: 1.8rem;
     h2
       font-size 1.8rem
       text-align left
@@ -429,7 +430,6 @@ body.page
       max-width 100%
       margin 2rem auto
       display block
-      border 2px solid #ddd
 
     figure
       clearfix()
@@ -437,11 +437,14 @@ body.page
       margin 2rem auto
       display inline-block
       width auto
+      display table
       img, video
         max-width 100%
         border 2px solid #ddd
         margin 0 auto
       figcaption
+        display: table-caption
+        caption-side: bottom
         margin-top -3px
         background #ddd
         padding 1rem
@@ -464,6 +467,8 @@ body.page
         line-height: 1.6rem;
         margin-top: -10px;
         background: #eee;
+        margin-left: 0;
+        padding-top: 30px;
         li
           list-style: circle
           margin-left: 1rem
@@ -487,6 +492,7 @@ body.page
         text-align: right;
         font-size: 1rem;
         color: #bbb;
+        display: none;
       .protocol
         font-style italic
       .profilePic
@@ -530,9 +536,12 @@ body.page
   body.page header h1
     font-size 3rem
     line-height 3rem
-  .content h2
-    font-size 2rem
-    margin 2rem auto 1rem
+  .content
+    h2
+      font-size 2rem
+      margin 2rem auto 1rem
+    > p, section > p
+      line-height: 1.7rem;
   .current
     display block !important
 
@@ -582,6 +591,9 @@ body.page
 
   #work > p 
     margin-bottom 1rem !important
+
+  .message .sentVia
+    display: inline-block !important;
 
 // ------------ SMALL DESKTOP ------------ //
 

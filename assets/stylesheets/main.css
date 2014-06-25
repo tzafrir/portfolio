@@ -536,6 +536,7 @@ body.page h1 {
 }
 body.page header {
   max-width: 100%;
+  overflow: hidden;
   position: relative;
   padding: 0;
   margin-bottom: 2rem;
@@ -607,7 +608,7 @@ body.page .content section > p {
   margin: 1.5rem auto 0;
   font-family: "freight-text-pro", sans-serif;
   font-size: 1.2rem;
-  line-height: 1.6rem;
+  line-height: 1.8rem;
 }
 body.page .content h2 {
   font-size: 1.8rem;
@@ -622,7 +623,6 @@ body.page .content img {
   max-width: 100%;
   margin: 2rem auto;
   display: block;
-  border: 2px solid #ddd;
 }
 body.page .content figure {
   zoom: 1;
@@ -630,6 +630,7 @@ body.page .content figure {
   margin: 2rem auto;
   display: inline-block;
   width: auto;
+  display: table;
 }
 body.page .content figure:before,
 body.page .content figure:after {
@@ -646,6 +647,8 @@ body.page .content figure video {
   margin: 0 auto;
 }
 body.page .content figure figcaption {
+  display: table-caption;
+  caption-side: bottom;
   margin-top: -3px;
   background: #ddd;
   padding: 1rem;
@@ -670,6 +673,8 @@ body.page .content .message .contents {
   line-height: 1.6rem;
   margin-top: -10px;
   background: #eee;
+  margin-left: 0;
+  padding-top: 30px;
 }
 body.page .content .message .contents li {
   list-style: circle;
@@ -699,6 +704,7 @@ body.page .content .message .sentVia {
   text-align: right;
   font-size: 1rem;
   color: #bbb;
+  display: none;
 }
 body.page .content .message .protocol {
   font-style: italic;
@@ -749,6 +755,10 @@ body.page ul.writing li.current a:hover {
   .content h2 {
     font-size: 2rem;
     margin: 2rem auto 1rem;
+  }
+  .content > p,
+  .content section > p {
+    line-height: 1.7rem;
   }
   .current {
     display: block !important;
@@ -808,6 +818,9 @@ body.page ul.writing li.current a:hover {
   }
   #work > p {
     margin-bottom: 1rem !important;
+  }
+  .message .sentVia {
+    display: inline-block !important;
   }
 }
 @media all and (min-width: 65rem) {
